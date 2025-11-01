@@ -26,4 +26,5 @@ def home(response):
     dat={'la':la}
     #return render(response,"home.html",{'da_0':da_0,'da_1':da_1,'da_2':da_2,'da_3':da_3,'da_4':da_4,'da_5':da_5,'da_6':da_6,'da_7':da_7,'da_8':da_8,'da_9':da_9,'da_10':da_10,'da_11':da_11,'le':le})
 
-    return render(response,"home.html",{'dat': dat,'la':la,'le':le-1})
+    return render(response,"index.html",{'dat': dat,'la':la,'le':le-1})
+
