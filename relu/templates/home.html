@@ -4,6 +4,23 @@
 <form action="" method="post" id="o">
 {% csrf_token %}
 <button name="home" value="home" id="k3"></button>
+<select name="da">
+ <option value="branch" selected hidden>select</option>
+<option value="DA_Number"> DA_Number</option>
+<option value="Detail_URL"> Detail_URL</option>
+<option value="Description"> Description</options>
+<option value="Submitted_Date"> Submitted_Date</option>
+<option value="Decision"> Decision</option>
+<option value="Categories"> Categories</option>
+<option value="Property_Address"> Property_Address</option>
+<option value="Applicant"> Applicant</option>
+<option value="Progress"> Progress</option>
+<option value="Fees"> Fees</option>
+<option value="Documents"> Documents</option>
+<option value="Contact_Council"> Contact_Council</option>
+</select>
+<input type="text" name="na" id="i">
+<button name="but" value="but" id="k2"></button>
 </form>
 <form action="" method="post" >
 {% csrf_token %}
@@ -24,6 +41,17 @@
     <th> Contact_Council  &nbsp &nbsp &nbsp &nbsp   </th>
 
   </tr>
+
+     {% for i in r %} 
+   <tr>
+{% for j in i %} 
+     <td>  &nbsp &nbsp &nbsp &nbsp  {{j}} </td>
+{% endfor %}
+    </tr>
+   {% endfor %}
+  
+
+
    {% for i in la %} 
    
    <tr>
@@ -32,14 +60,37 @@
 {% endfor %}
     </tr>
    {% endfor %}
+
 </table>
 </div>
 </form>
 <style>
-table {
-      width: 1000px;
- 
-    }
+#k2{
+position:absolute;
+top:10px;
+left:850px;
+height:50px;
+width:50px;
+background:rgba(0,0,0,.4);
+box-shadow: 0 15px 25px rgba(0,0,0,.6);
+ background-image:url({% static 'image/close.jpg' %});
+ background-size:cover;
+ background-position:center;
+ border-radius:40px;
+}
+select{
+position: absolute;
+top:10px;
+left: 150px;
+color:white;
+height:40px;
+width:155px;
+font-size:25px;
+font-family:newtimesroman;
+border-radius:15px;
+background:rgba(0,0,0,0.2);
+text-align:center;
+}
     th, td {
       border: 1px solid #333;
       padding: 8px;
@@ -52,7 +103,7 @@ table {
  position:absolute;
  top:100px;
  left:50px;
- overflow-y:auto;
+ 
 }
 table{
  width:900px;
@@ -70,6 +121,19 @@ h1{
  font-family:newtimesroman;
  color:white;
 }
+#i{
+position:absolute;
+top:10px;
+left:330px;
+height:40px;
+width:500px;
+font-family: newtimesroman;
+background:white;
+box-shadow: 0 15px 25px rgba(0,0,0,.6);
+font-size: 20px;
+ border-radius:40px;
+}
+
 #k3{
 position:absolute;
 top:10px;
@@ -77,52 +141,16 @@ left:2%;
 height:50px;
 width:50px;
 background:rgba(0,0,0,.4);
- box-shadow: 0 15px 25px rgba(0,0,0,.6);
+box-shadow: 0 15px 25px rgba(0,0,0,.6);
  background-image:url({% static 'image/homee.jpg' %});
  background-size:cover;
  background-position:center;
  border-radius:40px;
 }
-#k0{
-color:white;
-position:absolute;
-top:10px;
-left:79%;
-height:40px;
-width:155px;
-font-size:25px;
-font-family:newtimesroman;
-border-radius:15px;
-background:rgba(0,0,0,0.2);
-}
 
-#k1{
-color:white;
-position:absolute;
-top:10px;
-left:70%;
-height:40px;
-width:125px;
-font-size:25px;
-font-family:newtimesroman;
-border-radius:15px;
- background:rgba(0,0,0,0.2);
-}
-#k2{
-color:white;
-position:absolute;
-top:10px;
-left:90%;
-height:40px;
-width:125px;
-font-size:25px;
-font-family:newtimesroman;
-border-radius:15px;
- background:rgba(0,0,0,0.2);
-}
 #o{
 position:fixed;
-top:0px;
+top:10px;
 left:0px;
 height:60px;
 width:100%;
@@ -132,6 +160,7 @@ color:white;
 background:#00cab1;
 border-radius:10px;
 padding :3px;
+background: rgba(0,0,0,.2);
 box-shadow: 0 15px 25px rgba(0,0,0,.4);
 z-index:1000;
 }
