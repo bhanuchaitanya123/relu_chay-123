@@ -1,6 +1,10 @@
 {% load static %}
 <html>
-
+{% for msg in messages %}
+  <div id="j"><br>
+{{msg}}
+</div>
+{% endfor %}
 <form action="" method="post" id="o">
 {% csrf_token %}
 <button name="home" value="home" id="k3"></button>
@@ -21,6 +25,7 @@
 </select>
 <input type="text" name="na" id="i">
 <button name="but" value="but" id="k2"></button>
+<button name="v" value="v" id="k1"></button>
 </form>
 <form action="" method="post" >
 {% csrf_token %}
@@ -42,10 +47,10 @@
 
   </tr>
 
-     {% for i in r %} 
+     {% for o in r %} 
    <tr>
-{% for j in i %} 
-     <td>  &nbsp &nbsp &nbsp &nbsp  {{j}} </td>
+{% for h in o %} 
+     <td>  &nbsp &nbsp &nbsp &nbsp  {{h}} </td>
 {% endfor %}
     </tr>
    {% endfor %}
@@ -65,6 +70,19 @@
 </div>
 </form>
 <style>
+#k1{
+position:absolute;
+top:10px;
+left:900px;
+height:50px;
+width:50px;
+background:rgba(0,0,0,.4);
+box-shadow: 0 15px 25px rgba(0,0,0,.6);
+ background-image:url({% static 'r.jpg' %});
+ background-size:cover;
+ background-position:center;
+ border-radius:40px;
+}
 #k2{
 position:absolute;
 top:10px;
@@ -73,10 +91,23 @@ height:50px;
 width:50px;
 background:rgba(0,0,0,.4);
 box-shadow: 0 15px 25px rgba(0,0,0,.6);
- background-image:url({% static 'image/close.jpg' %});
+ background-image:url({% static 'close.jpg' %});
  background-size:cover;
  background-position:center;
  border-radius:40px;
+}
+#j{
+position : absolute;
+ height:100px;
+ text-align:center;
+width:500px;
+ top:300px;
+ left:460px;
+font-size:20px;
+ background-color:rgba(0,0,0,0.2);
+ border-radius:10px;
+ background: #f1807e;
+ font-family:timesnewroman;
 }
 select{
 position: absolute;
@@ -142,7 +173,7 @@ height:50px;
 width:50px;
 background:rgba(0,0,0,.4);
 box-shadow: 0 15px 25px rgba(0,0,0,.6);
- background-image:url({% static 'image/homee.jpg' %});
+ background-image:url({% static 'homee.jpg' %});
  background-size:cover;
  background-position:center;
  border-radius:40px;
